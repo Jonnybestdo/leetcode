@@ -1,14 +1,16 @@
 fn climb_stairs(n: i32) -> i32 {
-    let mut p = 1;
-    let mut w = 1;
-    let mut t;
-    for _ in 1..n {
-        t = p;
-        p = w;
-        w = t;
-        w += p;
+    if n <= 3 {
+        return n;
     }
-    w    
+    let mut p1 = 2;
+    let mut p2 = 3;
+    let mut s = 0;
+    for _ in 3..n {
+        s = p1 + p2;
+        p1 = p2;
+        p2 = s;
+    }
+    s    
 }
 
 fn main() {
